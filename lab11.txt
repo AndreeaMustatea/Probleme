@@ -1,0 +1,226 @@
+11.1)
+#include <stdio.h>
+void fPatrat(int *pNr) {
+ *pNr *= *pNr; 
+*pNr= *pNr * *pNr;
+}
+
+int main() {
+
+   int nr = 12;
+
+   printf("%d * %d = ", nr, nr); 
+
+   fPatrat(&nr); 
+
+   printf("%d\n", nr); 
+
+ return 0;
+
+}
+
+11.2)
+#include <stdio.h>
+#include <stdlib.h>
+#define N 5
+int citire1(int tab[]){
+//citeste elementele lui tab prin accesarea indexata a elementelor
+int i=0;
+printf("Introduceti elementele tabloului (CTRL-Z pentru oprire):\n");
+while(scanf("%d" ,&tab[i])!=EOF)
+    i++;
+
+
+return i;
+}
+void tiparire1(int *tab, int n){
+//tipareste elementele tabloului prin accesarea indexata a elementelor
+int i;
+printf("Elementele tabloului:\n");
+for(i=0;i<n;i++)
+ printf("%d ",tab[i]);
+printf("\n");
+}
+int citire2(int tab[]){
+/* citeste elementele lui tab - accesarea fiecarui element se
+face printr-un pointer la el */
+int *pi;
+pi=tab;
+printf("Introduceti elementele tabloului (CTRL-Z pentru oprire):\n");
+while(scanf("%d",pi)!=EOF) pi++;
+return pi-tab;
+}
+void tiparire2 (int tab[], int n){
+// tipareste elementele lui tab prin accesare prin pointeri
+int *pi;
+printf("Elementele tabloului:\n");
+for (pi=tab; pi<tab+n; pi++)
+ printf("%d ",*pi);
+printf("\n");
+}
+int main(){
+int tab1[N], tab2[N], n, m;
+n=citire1(tab1);
+tiparire1(tab1,n);
+m=citire2(tab2);
+tiparire2(tab2,m);
+return 0;
+}
+
+11.3)
+#include <stdio.h>
+
+void  citireVector(double **v, int n) {
+  int i;
+  *v = (double *)malloc(n * sizeof(double));
+  printf("Introdu valorile vectorului v\n");
+  for (i = 0; i < n; i++) {
+    printf("v[%d]=",i);
+    scanf("%lf", &(*v)[i]);
+  }
+
+}
+
+void afisare_ptr(double *v, int n)
+{
+   int i;
+   printf( " Valorile vectorului v utiliand pointer la v:\n");
+
+   for ( i = 0; i < n; i++ ) {
+      printf("*(v + %d) : %f\n",  i, *(v + i) );
+   }
+
+}
+
+void afisare_adr(double *v, int n)
+{
+   int i;
+   printf( "Valorile vectorului utilizand adresa sa:\n");
+
+   for ( i = 0; i < n; i++ ) {
+      printf("*(v + %d) : %f\n",  i, *(v + i) );
+   }
+
+}
+int main () {
+
+    double *v, *p;
+    int i,n;
+    printf("Introdu numarul de valori:");
+    scanf("%d",&n);
+
+    citireVector(&v,n);
+    p=v;
+    afisare_ptr(p,n);
+    afisare_adr(v,n);
+
+   return 0;
+}
+
+11.4)
+void swap(int *pa, int *pb){
+int temp = *pa;
+*pa=*pb;
+*pb=temp;}
+void main(){
+int a=10,b=11;
+printf("a=%d b=%d\n",a,b);
+swap(&a,&b);
+printf("a=%d b=%d\n",a,b);
+return 0;}
+
+
+11.5)
+void strcopy( char *dest, char *sursa)
+{while(*dest++=*sursa++);}
+int main(){
+char str_sursa[50],str_dest[50];
+printf("Introdu sirul de caractere=");
+str_sursa[strlen(str_sursa)-1]='\0';
+strcpy(str_dest,str_sursa);
+printf("Copia sirului introdus este= %s",str_dest);
+return 0;}
+
+Structuri de date
+
+11.6)
+#include <stdio.h>
+#include <string.h>
+ 
+struct Carti {
+   char  titlu[50];
+   char  autor[50];
+   char  domeniu[100];
+   int   id_carte;
+}; 
+ 
+int main( ) {
+
+   struct Carti Carte1;        /* Declare Carte1 of type Book */
+   struct Carti Carte2;        /* Declare Carte2 of type Book */
+ 
+   /* Carte 1 */
+   strcpy( Carte1.titlu, "C Programming");
+   strcpy( Carte1.autor, "Nuha Ali"); 
+   strcpy( Carte1.domeniu, "Tutorial");
+   Carte1.id_carte = 6495407;
+
+   /* Carte 2 */
+   strcpy( Carte2.titlu, "Telecom Billing");
+   strcpy( Carte2.autor, "Zara Ali");
+   strcpy( Carte2.domeniu, "Tutorial");
+   Carte2.id_carte = 6495700;
+ 
+   /* afisare Carte1 */
+   printf( "Carte 1 titlu : %s\n", Carte1.titlu);
+   printf( "Carte 1 autor : %s\n", Carte1.autor);
+   printf( "Carte 1 domeniu : %s\n", Carte1.domeniu);
+   printf( "Carte 1 id_carte : %d\n", Carte1.id_carte);
+
+   /* afisare  Carte2  */
+   printf( "Carte 2 titlu : %s\n", Carte2.titlu);
+   printf( "Carte 2 autor : %s\n", Carte2.autor);
+   printf( "Carte 2 domeniu : %s\n", Carte2.domeniu);
+   printf( "Carte 2 id_carte : %d\n", Carte2.id_carte);
+
+	struct Carti C[10];
+int i;
+for(i=0;i<4;i++){
+gets(c[i].titlu);
+gets(c[i].autor);
+gets(c[i].domeniu);
+scanf("%d",&c[i].id_carte);
+}
+printf("\n Afisare\n");
+for(i=0;i<4;i++)
+printf("Cartea: %s Autor:%s Domeniu:%s Id:%d\n",c[i].titlu,c[i].autor,c[i].domeniu,c[i].id_carte);
+   return 0;
+}
+
+11.7)
+void Afisez(struct Obiect ob,int i)
+{printf("Nr.bon:%d\n",ob.bon);
+printf("Nume produs:"%s\n",ob.produs);
+printf("Cantitate: %d\n,ob.cantitate);
+printf("Pret unitar: %d\n",ob.pret);
+}
+int PretMinim(struct Obiect ob[],int n)
+{
+int i,min,poz=0;
+min=ob[0].pret;
+for(i=1;i<n;i++)
+if(min>ob[i].pret){
+min=ob[i].pret;
+poz=i;}
+return poz;}
+
+int main(){
+struct Obiect ob[10];
+int n=2,i,poz_minim;
+for(i=0;i<n;i++){
+printf("Datele produsului %d sunt: bon,nume,produs,cantitate si pret unitar: \n",i+1);
+Afisez(ob[i],i);}
+poz_minim=PretMinim(ob,n);
+printf("Produsul cu pretul minim este:\n");
+Afisez(ob[poz_minim],poz_minim);
+return 0;}
