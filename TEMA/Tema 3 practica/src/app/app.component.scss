@@ -1,0 +1,72 @@
+.title {
+    color: rgb(0, 0, 0);
+    text-align:center;
+    margin-top: 100px;
+    font-family:"Lucida Calliography", "Lucida Calliography", monospace;
+    
+}
+.table-title {
+    color: rgb(12, 12, 12);
+    margin-top: 100px;
+    margin-left: 200px;
+    font-family:"Lucida Calliography";
+    width: 300px;
+}
+.subtitle{
+    color:rgb(63, 43, 43);
+    text-align: center;
+    margin-left: 200px;
+    font-size: 30px;
+}
+.title-cards{
+    color:rgb(9, 7, 7);
+    margin-top: 10px;
+    margin-left: 1px;
+    text-align: center;
+    font-size: 40px;
+}
+.button{
+    color:rgb(63, 43, 43);
+    margin-left: 380px;
+    font-size: 18px;
+    border: 3px solid rgb(24, 24, 24);
+    text-decoration: none;
+    background: linear-gradient(124deg, rgb(235, 247, 71) 0%, rgb(251, 169, 5) 100%);
+
+}
+.background {
+    background-color:rgb(131, 133, 124);
+    width: 100vw;
+    height: 109vh;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-attachment: scroll;
+}
+.top {
+    padding: -100px;
+    display:flex;
+    justify-content: space-between;
+    background: linear-gradient(124deg, rgb(235, 247, 71) 0%, rgb(251, 169, 5) 100%);
+    color: white;
+    font-size: 30px;
+    height: 52vh;
+  }
+
+.left {
+    width: 50%;
+}
+
+.right{
+    width: 50%;
+}
+
+img{
+    height: 90%;
+    margin-left: 100px;
+}
+
+.cards-container{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}

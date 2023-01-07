@@ -1,0 +1,26 @@
+<div class="background">
+  <div class="top">
+    <div class="left">
+      <h1 class="title">NATURAL HONEY</h1>
+      <div class="subtitle">Purity guaranteed </div>
+      <a class="button" href="https://www.youtube.com/watch?v=Z54bL6kjyOI" target="_blank" >BUY NOW</a>
+    </div>
+
+    <div class="right">
+        <img src="https://i.imgur.com/kPkqRcA.png">
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="title-cards">OUR BEST SELLERS</div>
+    <div class="cards-container">
+      <app-card *ngFor="let plan1 of plans" [plan]="plan1"></app-card>
+    </div>
+  </div>
+  
+  <div>
+    <h1 class="table-title">Members of contact</h1>
+  </div>
+   
+  <app-table></app-table>
+</div>
