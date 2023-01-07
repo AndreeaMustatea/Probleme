@@ -1,0 +1,13 @@
+<nz-card style="width:300px;" [nzTitle]="plan.type" [nzExtra]="extraTemplate">
+<p>{{plan.describe}}</p>
+    <p>{{plan.price}}</p>
+  </nz-card>
+  <ng-template #extraTemplate>
+    <button nz-button [nzType]="'primary'" (click)="showModal()"><span>Show Modal</span></button>
+  </ng-template>
+
+    <nz-modal [(nzVisible)]="isVisible" [nzTitle]="plan.type" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+      <ng-container *nzModalContent>
+        <p>{{plan.describe}}</p>
+      </ng-container>
+    </nz-modal>
