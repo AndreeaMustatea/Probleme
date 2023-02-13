@@ -1,0 +1,33 @@
+.editable-cell {
+    position: relative;
+    padding: 5px 12px;
+    cursor: pointer;
+  }
+
+  .editable-row:hover .editable-cell {
+    border: 1px solid hwb(0 85% 15%);
+    border-radius: 4px;
+    padding: 4px 11px;
+  }
+  .box {
+    width: 30%;
+    border-radius: 100px;
+    padding: 40px 50px 50px 50px;
+    margin-left: 450px;
+    margin-bottom: 20px;
+    align-items: center;
+    background: linear-gradient(124deg, rgb(235, 247, 71) 0%, rgb(251, 169, 5) 100%);
+  }
+  .background{
+    background:gray;
+  }
+  button[type="add"] {
+    background-color: red; /* make the background transparent */
+    color: #fff; /* keep the text color as white */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* make the button a block level element */
+    margin: 0 auto; /* center the button horizontally */
+  }

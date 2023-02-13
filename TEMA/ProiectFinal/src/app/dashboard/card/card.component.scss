@@ -1,0 +1,15 @@
+.card{
+    margin-top: 100px;
+    border: 3px solid rgb(10, 10, 10);
+    border-radius: 5px;
+    width: 350px;
+    height: 120px;
+    background: linear-gradient(124deg, rgb(235, 247, 71) 0%, rgb(251, 169, 5) 100%);
+    text-align: center;
+}
+button {
+    background-color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.97);
+    border-radius: 5px;
+    cursor:progress;
+}

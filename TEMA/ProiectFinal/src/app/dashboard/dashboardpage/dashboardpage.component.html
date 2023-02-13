@@ -1,0 +1,25 @@
+<div class="background">
+    <div class="top">
+      <div class="left">
+        <h1 class="title">NATURAL HONEY</h1>
+        <div class="subtitle">Purity guaranteed </div>
+        <a class="button" href="https://www.youtube.com/watch?v=Z54bL6kjyOI" target="_blank" >SEE MORE</a>
+      </div>
+  
+      <div class="right">
+          <img src="https://i.imgur.com/kPkqRcA.png">
+      </div>
+    </div>
+  
+    <div class="body">
+      <div class="title-cards">OUR BEST SELLERS</div>
+      <div class="cards-container">
+        <app-card *ngFor="let plan1 of plans" [plan]="plan1"></app-card>
+      </div>
+    </div>
+    <div class="bottom">
+      <h1 class="table-title">Donations! </h1>
+      <h2 class="content">Due to an unfortunate series of events , we have lost several of our bee hives, if you would be so kind and you like our products and our natural honey donations are open for anyone who wants to help us.</h2>
+    </div>
+    <app-table></app-table>
+  </div>

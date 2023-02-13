@@ -1,0 +1,96 @@
+
+    <from [formGroup]="userForm">
+        <div class="background">
+        <div class="mt-5 box">
+          <div class="form-row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Name</label>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" formControlName="name" class="form-control" placeholder="Name">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Age</label>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" formControlName="age" class="form-control" placeholder="Age">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Address</label>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" formControlName="adress" class="form-control" placeholder="Address">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Job</label>
+              </div>
+              <div class="form-row">
+                <div class="col">
+                  <input type="text" formControlName="job" class="form-control" placeholder="Job">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                  <label>Donation</label>
+                </div>
+                <div class="form-row">
+                  <div class="col">
+                    <input type="text" formControlName="donation" class="form-control" placeholder="Donation">
+                  </div>
+                </div>
+              </div>
+            <div class="form-row mt-4">
+              <div class="col-md-6">
+                <button type="button" class="btn btn primary"(click)="addItem()">Add</button>&nbsp;
+                <button type="button" class="btn btn primary"(click)="reset()">Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      </from>
+  <nz-table #filterTable [nzData]="listOfData" nzTableLayout="fixed">
+    <thead>
+      <tr>
+        <th
+          *ngFor="let column of listOfColumns"
+          [nzSortOrder]="column.sortOrder"
+          [nzSortFn]="column.sortFn"
+          [nzSortDirections]="column.sortDirections"
+          [nzFilterMultiple]="column.filterMultiple"
+          [nzFilters]="column.listOfFilter"
+          [nzFilterFn]="column.filterFn"
+        >
+          {{ column.name }}
+        </th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of filterTable.data">
+        
+        <td>{{ data.name }}</td>
+        <td>{{ data.age }}</td>
+        <td>{{ data.address }}</td>
+        <td>{{data.job}}</td>
+        <td>{{data.donation}}</td>
+        <td>
+          <button nz-button nzType="danger" (click)="deleteData(data)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>

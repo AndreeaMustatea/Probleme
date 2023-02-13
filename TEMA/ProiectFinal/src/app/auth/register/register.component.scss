@@ -1,0 +1,43 @@
+*{
+    background-color: rgba(166, 166, 166, 0.518);
+    }
+    form {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .form-control {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 1rem;
+    }
+    
+    label {
+      font-weight: bold;
+      margin-right: 1rem;
+      width: 100px;
+    }
+    
+    button[type="submit"] {
+      background-color: rgb(95, 94, 94); /* make the background transparent */
+      color: #fff; /* keep the text color as white */
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block; /* make the button a block level element */
+      margin: 0 auto; /* center the button horizontally */
+    }

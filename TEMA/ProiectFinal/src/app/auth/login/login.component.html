@@ -1,0 +1,28 @@
+<div class ='container'>
+    <form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="login()">
+      <h3>Log In</h3>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input an existing email!">
+            <nz-input-group nzPrefixIcon="user">
+              <input type="text" nz-input formControlName="email" placeholder="Email" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input a valid password!">
+            <nz-input-group nzPrefixIcon="lock">
+              <input type="password" nz-input formControlName="password" placeholder="Password" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <label nz-checkbox formControlName="rememberMe">Remember me</label>
+          </nz-form-control>
+        </nz-form-item>
+        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+        Or
+        <a routerLink="/register">register now!</a>
+        <p *ngIf="displayError" nz-typography nzType="danger">Login Failed</p>
+      </form> 
+</div>
